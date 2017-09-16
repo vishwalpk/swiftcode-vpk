@@ -2,5 +2,5 @@ package data;
 
 public class AgentResponse {
 
-    public String keyWord;
+    public String keyword;
 }

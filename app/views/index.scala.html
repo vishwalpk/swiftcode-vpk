@@ -16,8 +16,23 @@
        background-size:cover;
        background-position: right bottom">
 
-       </md-content>
        
+       
+       <div ng-repeat="message in messages" layout="column" layout-align="{{message.sender=='BOT' ? 'start start' : 'start end'}}">
+              <md-card style = "max width:75%; border-radius: 10px; padding: 15px; font-size: 20px;" 
+              ng-style="message.sender=='BOT' ? {'background-color': 'teal'} : {'background-color': 'grey'}">
+              <span>{{message.text}}</span>
+              <span ng-bind-html="trust(message.feedResponse.description)">{{message.feedResponse.description}}</span>
+              <span style="margin-top: 4px; text-align: right; color: black ; font-size: 10px;"> {{message.time}} </span>
+
+
+            </md-card>
+
+       
+       </div>
+
+       </md-content>
+
        <md-card flex="10" style="margin: 0px" layout="row" layout-align="space-between center" class="md-whiteframe-8dp">
           <form flex="90" ng-submit="sendMessage()" layout="row">
                <md-input-container flex="100">
