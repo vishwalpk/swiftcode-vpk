@@ -23,7 +23,7 @@
               ng-style="message.sender=='BOT' ? {'background-color': 'teal'} : {'background-color': 'grey'}">
               <span>{{message.text}}</span>
               <span ng-bind-html="trust(message.feedResponse.description)">{{message.feedResponse.description}}</span>
-              <span style="margin-top: 4px; text-align: right; color: black ; font-size: 10px;"> {{message.time}} </span>
+              <span style="margin-top: 4px; text-align: left; color: black ; font-size: 10px;"> {{message.time}} </span>
 
 
             </md-card>
